@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 3. Todo List App (Core Intermediate)
+    Concepts: Input handling, event delegation, DOM creation/deletion, class toggling
+    Problem Statement:Build a Todo List app where users can:
+    * Add tasks using a text input + “Add” button.
+    * See a list of added tasks.
+    * Mark tasks as completed (toggle strikethrough).
+    * Delete individual tasks.
+    Bonus:
+    * Filter tasks (All, Completed, Incomplete).
+    * Save to localStorage. -->
+    <div class="box">
+        <div class="task">
+            <input class="myinput" type="text">
+            <button>Add</button>
+        </div>
+    </div>
+    <div class="task-list">
+        <ul>
+
+        </ul>
+    </div>
+    <script>
+        let task1 = "hello";
+        document.querySelector("button").addEventListener("click", () => {
+            task1 = document.querySelector(".myinput").value;
+            console.log(task1);
+            let item = document.createElement("li");
+            let item_link = document.createElement("a");
+            // let att = document.createAttribute("href");
+            item_link.setAttribute('href', '#');
+            item_link.textContent = task1;
+            item.appendChild(item_link);
+            let list = document.querySelector(".task-list ul");
+            list.appendChild(item);
+        });
+        // let task_list = document.querySelectorAll("li");
+
+
+
+        document.querySelector(".task-list ul").addEventListener("click", (e) => {
+            e.preventDefault(); 
+            const target = e.target;
+            console.log(target)
+            if (target.tagName === 'LI') {
+                target.style.textDecoration = "line-through";
+            } else if (target.tagName === 'A') {
+                target.parentElement.style.textDecoration = "line-through";
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

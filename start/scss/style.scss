@@ -1,7 +1,45 @@
-body{
-    div{
-        background-color: black;
-        color: aquamarine;
-        border: 1px solid red;
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    background-color: white;
+    color: black;
+    transition: all 0.2s linear;
+    #modal_btn{
+        margin: 40px;
     }
+
+    .modal{
+        padding: 20px;
+        margin-bottom: 30px ;
+        background-color:bisque;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        transition: all 0.2s linear;
+        h1 {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+        }
+
+
+    }
+    
+
 }
+
+.dark_mode {
+    background-color: black;
+    color: white;
+}
+
